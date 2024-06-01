@@ -1,0 +1,71 @@
+{
+  "name": "@mikededo/aero-ui",
+  "version": "0.0.1",
+  "type": "module",
+  "repository": "github:mikededo/aero-ui",
+  "author": "Miquel de Domingo",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    }
+  },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "scripts": {
+    "build": "vite build && bun run package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "conc \"bun dev:app\" \"bun check:watch\"",
+    "dev:app": "vite dev",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint . --max-warnings=0",
+    "lint:fix": "prettier --write . && eslint --fix .",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepare": "svelte-kit sync",
+    "prepublishOnly": "bun run package",
+    "preview": "vite preview",
+    "test": "bun run test:integration && bun run test:unit",
+    "test:integration": "playwright test",
+    "test:unit": "vitest"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.4.0",
+    "@playwright/test": "1.44.1",
+    "@sveltejs/adapter-auto": "3.2.1",
+    "@sveltejs/kit": "2.5.10",
+    "@sveltejs/package": "2.3.1",
+    "@sveltejs/vite-plugin-svelte": "3.1.1",
+    "@types/eslint": "8.56.10",
+    "autoprefixer": "10.4.19",
+    "eslint": "9.4.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-svelte": "2.39.0",
+    "globals": "15.3.0",
+    "postcss": "8.4.38",
+    "prettier": "3.2.5",
+    "prettier-plugin-svelte": "3.2.3",
+    "prettier-plugin-tailwindcss": "0.6.1",
+    "publint": "0.2.8",
+    "svelte": "5.0.0-next.1",
+    "svelte-check": "3.8.0",
+    "tailwind-merge": "2.3.0",
+    "tailwindcss": "3.4.3",
+    "tslib": "2.6.2",
+    "typescript": "5.4.5",
+    "typescript-eslint": "8.0.0-alpha.20",
+    "vite": "5.2.12",
+    "vitest": "1.6.0"
+  },
+  "peerDependencies": {
+    "@melt-ui/pp": "0.3.2",
+    "@melt-ui/svelte": "0.81.0",
+    "svelte": "5.0.0-next.1"
+  }
+}
