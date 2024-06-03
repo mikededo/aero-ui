@@ -5,6 +5,6 @@
     let { children }: Props = $props();
 </script>
 
-<div class="flex flex-col gap-4 px-4 py-12">
+<div class="flex flex-col gap-4">
     {@render children()}
 </div>

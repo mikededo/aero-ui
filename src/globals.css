@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-primary: Geist, sans-serif;
+@layer base {
+  :root {
+    --font-primary: Geist, sans-serif;
+    --foreground: #333333;
+
+    .dark {
+      /* DEFINE DARK MODE VARIABLES */
+    }
+  }
 }
 
 html {
   font-family: var(--font-primary);
+  color: var(--foreground);
+  stroke: var(--foreground);
 }

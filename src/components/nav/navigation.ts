@@ -14,6 +14,7 @@ export const navigation: Navigation = [
     items: [
       { title: 'Installation', path: '/docs/installation' },
       { title: 'Theming', path: '/docs/theming' },
+      { title: 'Typography', path: '/docs/typography' },
       { title: 'Tokens', path: '/docs/tokens' }
     ]
   },

@@ -5,7 +5,7 @@
 </script>
 
 <nav
-    class="hidden h-[calc(100vh-48px)] max-w-xs flex-col gap-4 overflow-y-auto border-r px-2 py-4 text-sm md:px-4 lg:flex"
+    class="h-full-topbar hidden max-w-xs flex-col gap-4 overflow-y-auto border-r px-2 py-4 text-sm md:px-4 lg:flex"
 >
     <input class="w-full rounded-full bg-gray-100 px-4 py-2" placeholder="Search" />
     {#each navigation as { title, items }}

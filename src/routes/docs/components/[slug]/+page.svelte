@@ -5,6 +5,6 @@
     let { data }: Props = $props();
 </script>
 
-<h1 class="text-3xl font-semibold">
+<h1>
     {data.component[0].toUpperCase()}{data.component.slice(1).replaceAll('-', ' ')}
 </h1>
