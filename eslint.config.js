@@ -98,6 +98,7 @@ export default tsEslint.config(
       }
     },
     rules: {
+      ...sharedRules,
       // FIXME: Temporary fix to be able to use $t
       // https://github.com/sveltejs/eslint-plugin-svelte/issues/652
       'svelte/valid-compile': 'off'

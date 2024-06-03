@@ -6,7 +6,10 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
   preprocess: sequence([vitePreprocess(), preprocessMeltUI()]),
   kit: {
-    adapter: adapter()
+    adapter: adapter(),
+    alias: {
+      $components: 'src/components'
+    }
   }
 };
 
