@@ -3,29 +3,34 @@
     import type { Snippet } from 'svelte';
 
     import { dev } from '$app/environment';
+    import { page } from '$app/stores';
     import { DesktopNav, JSIndicator, MobileNav, TailwindIndicator } from '$components/index.js';
 
     type Props = { children: Snippet };
     let { children }: Props = $props();
 </script>
 
-<header class="flex h-topbar w-full items-center gap-2 border-b px-4 md:px-6">
+<header class="h-topbar flex w-full items-center gap-2 border-b px-4 md:px-6">
     <RabbitIcon />
     <p class="text-xl font-semibold">Aero UI</p>
 </header>
 
 <main class="flex overflow-hidden">
-    <DesktopNav />
-    <MobileNav />
+    {#if !$page.error}
+        <DesktopNav />
+        <MobileNav />
 
-    <!-- Independent content  -->
-    <div class="content-wrapper">
-        <div
-            class="mx-auto h-full-topbar w-full max-w-[880px] px-8 py-6 md:px-10 lg:px-12 lg:py-12"
-        >
-            {@render children()}
+        <!-- Independent content  -->
+        <div class="content-wrapper overflow-y-auto">
+            <div
+                class="h-full-topbar mx-auto w-full max-w-[880px] px-8 py-6 md:px-10 lg:px-12 lg:py-12"
+            >
+                {@render children()}
+            </div>
         </div>
-    </div>
+    {:else}
+        {@render children()}
+    {/if}
 </main>
 
 {#if dev}

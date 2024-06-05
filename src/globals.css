@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --font-primary: Geist, sans-serif;
+    --font-sans: Geist;
+    --font-mono: 'Geist Mono';
     --foreground: #333333;
 
     .dark {
@@ -14,7 +15,8 @@
 }
 
 html {
-  font-family: var(--font-primary);
+  @apply font-sans;
+
   color: var(--foreground);
   stroke: var(--foreground);
 }

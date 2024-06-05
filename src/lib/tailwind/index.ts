@@ -8,7 +8,10 @@ export const theme: NonNullable<Config['theme']> = {
     screens: { xl: '1100px', '2xl': '1360px' }
   },
   extend: {
-    fontFamily: { sans: ['var(--font-sans)', ...fontFamily.sans] },
+    fontFamily: {
+      sans: ['var(--font-sans)', ...fontFamily.sans],
+      mono: ['var(--font-mono)', ...fontFamily.mono]
+    },
     borderColor: { DEFAULT: '#dee3e7' },
     colors: {
       background: 'var(--background)',

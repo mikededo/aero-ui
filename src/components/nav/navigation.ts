@@ -34,5 +34,9 @@ export const navigation: Navigation = [
       { title: 'JSIndicator', path: '/docs/utilities/js-indicator' },
       { title: 'TailwindIndicator', path: '/docs/utilities/tailwind-indicator' }
     ]
+  },
+  {
+    title: 'Other',
+    items: [{ title: 'Roadmap', path: '/docs/roadmap' }]
   }
 ];
