@@ -114,6 +114,7 @@ export default tsEslint.config(
       '.vercel',
       './src/app.html',
       'build/',
+      'dist/',
       'node_modules/',
       'package/',
       'postcss.config.js',
