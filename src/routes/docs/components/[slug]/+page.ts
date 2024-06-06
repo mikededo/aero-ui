@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { SvelteComponent } from 'svelte';
 
-import type { ComponentData } from '$docs/data/index.js';
+import type { ComponentData } from '$docs/index.js';
 
 import type { PageLoad } from './$types.js';
 
@@ -12,7 +12,7 @@ type DocResolver<T extends DocFile | DataFile> = () => Promise<T>;
 const slugFromModulePath = (path: string) => path.replace('/src/content/', '').replace('.md', '');
 const slugFromDataPath = (path: string) => path.replace('/src/docs/data/', '').replace('.ts', '');
 
-const getDoc = async (slug: string) => {
+const getData = async (slug: string) => {
   const modules = import.meta.glob('/src/content/**/*.md');
   const dataModules = import.meta.glob('/src/docs/data/**/*.ts');
 
@@ -26,9 +26,18 @@ const getDoc = async (slug: string) => {
     }
   }
 
+  let next = '';
+  let prev = '';
   for (const [path, resolver] of Object.entries(dataModules)) {
-    if (slugFromDataPath(path) === slug) {
+    const component = slugFromDataPath(path);
+    if (component === slug) {
       dataMatch = { path, resolver: resolver as unknown as DocResolver<DataFile> };
+      continue;
+    }
+    if (!dataMatch.path) {
+      prev = component;
+    } else {
+      next = component;
       break;
     }
   }
@@ -39,9 +48,9 @@ const getDoc = async (slug: string) => {
     error(404);
   }
 
-  return { doc, properties: data.data };
+  return { doc, properties: data.data, navigation: { next, prev } };
 };
 
 export const load: PageLoad = async ({ params }) => ({
-  ...(await getDoc(params.slug))
+  ...(await getData(params.slug))
 });
