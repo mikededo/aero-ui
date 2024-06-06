@@ -18,13 +18,13 @@
 {#snippet item(component, next)}
     <div class="h-16 w-36" class:ml-auto={next} class:text-right={next}>
         <p class="text-sm text-secondary-500">{next ? 'Next' : 'Previous'}</p>
-        <a href="${Routes.components}{component}" class="text-lg text-info">
+        <a href="{Routes.components}{component}" class="text-lg text-info">
             {componentName(component)}
         </a>
     </div>
 {/snippet}
 
-<div class="mt-auto flex w-full justify-between">
+<div class="mt-auto flex w-full justify-between pt-8">
     {#if navigation.prev}
         {@render item(navigation.prev, false)}
     {/if}

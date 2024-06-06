@@ -1,19 +1,29 @@
 import type { ComponentData } from '../index.js';
 
 export const data: ComponentData = {
-  base: 'HTMLAttributes<HTMLDivElement>',
+  base: 'HTMLButtonAttributes | HTMLAnchorAttributes',
   properties: {
-    destructive: {
-      type: 'boolean',
+    variant: {
+      type: 'ButtonVariant',
       required: false,
-      default: 'false',
-      description: 'Apply destructive styles'
+      default: "'default'",
+      description: 'The variant of the button'
     },
-    withTransition: {
-      type: 'boolean',
+    color: {
+      type: 'ButtonColor',
       required: false,
-      default: 'false',
-      description: 'Show/hide the banner with transitions'
+      default: "'primary'",
+      description: 'The color of the button'
+    },
+    href: {
+      type: 'string',
+      required: false,
+      description:
+        'The URL to navigate to when the button is clicked. It will use an anchor as an element for the component'
     }
+  },
+  types: {
+    ButtonVariant: "'condensed' | 'default'",
+    ButtonColor: "'primary' | 'secondary' | 'muted' | 'destructive'"
   }
 };

@@ -5,7 +5,9 @@ export type Properties = {
   default?: string;
   description?: string;
 };
+export type SpecificTypes = Record<string, string>;
 export type ComponentData = {
   base: Base;
   properties: Record<string, Properties>;
+  types?: Record<string, string>;
 };
