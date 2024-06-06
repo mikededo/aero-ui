@@ -4,7 +4,7 @@
   import { Preview } from '$components';
   import { Banner } from '$lib/components/banner';
 
-export let properties;
+  export let data;
 </script>
 
 The banner is used to display information to the user. It can be used to display
@@ -12,7 +12,7 @@ important information or to show a message to the user.
 
 ## Preview
 
-<Preview {properties}>
+<Preview {data}>
 <Banner>
 This is the content of the banner
 </Banner>

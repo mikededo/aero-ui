@@ -8,4 +8,4 @@
     let { doc, properties } = data;
 </script>
 
-<svelte:component this={doc.default as unknown as typeof SvelteComponent} {properties} />
+<svelte:component this={doc.default as unknown as typeof SvelteComponent} data={properties} />
