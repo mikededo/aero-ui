@@ -29,6 +29,7 @@ const sharedRules = {
   'import/no-duplicates': ['error', { considerQueryString: true }],
   'no-empty-function': ['error', { allow: ['arrowFunctions'] }],
   'no-unused-vars': 'off',
+  'no-undef': 'off',
   'sort-imports': ['error', { ignoreDeclarationSort: true }]
 };
 

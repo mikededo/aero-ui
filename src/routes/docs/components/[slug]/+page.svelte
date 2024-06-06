@@ -5,6 +5,7 @@
 
     type Props = { data: PageData };
     let { data }: Props = $props();
+    let { doc, properties } = data;
 </script>
 
-<svelte:component this={data.default as unknown as typeof SvelteComponent} />
+<svelte:component this={doc.default as unknown as typeof SvelteComponent} {properties} />

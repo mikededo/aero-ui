@@ -7,9 +7,12 @@ export default {
   content: ['./src/**/*.svelte', './src/**/*.ts', './src/**/*.html'],
   theme: {
     ...theme,
-    height: {
-      topbar: defaultTheme.spacing[12],
-      'full-topbar': `calc(100vh - ${defaultTheme.spacing[12]})`
+    extend: {
+      ...theme.extend,
+      height: {
+        topbar: defaultTheme.spacing[12],
+        'full-topbar': `calc(100vh - ${defaultTheme.spacing[12]})`
+      }
     }
   },
   plugins: [aero()]

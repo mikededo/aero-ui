@@ -1,11 +1,11 @@
 import { resolve } from 'path';
 import { URL, fileURLToPath } from 'url';
 
+import { escapeSvelte, mdsvex } from '@huntabyte/mdsvex';
 import { preprocessMeltUI, sequence } from '@melt-ui/pp';
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { toHtml } from 'hast-util-to-html';
-import { mdsvex, escapeSvelte } from '@huntabyte/mdsvex';
 import rehypePrettyCode from 'rehype-pretty-code';
 import { getHighlighter } from 'shiki';
 import { visit } from 'unist-util-visit';
@@ -155,10 +155,12 @@ const mdsvexOptions = {
 const config = {
   extensions: ['.svelte', '.md'],
   preprocess: sequence([mdsvex(mdsvexOptions), vitePreprocess(), preprocessMeltUI()]),
+  vitePlugin: { inspector: true },
   kit: {
     adapter: adapter(),
     alias: {
-      $components: 'src/components'
+      $components: 'src/components',
+      $docs: 'src/docs'
     }
   }
 };

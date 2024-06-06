@@ -77,9 +77,9 @@
                 {#each section.items as item}
                     <li class="ml-4 flex items-center gap-1">
                         {#if item.complete}
-                            <CheckIcon class="text-positive ml-2 h-5 w-5" />
+                            <CheckIcon class="ml-2 h-5 w-5 text-positive" />
                         {:else}
-                            <XIcon class="text-destructive ml-2 h-5 w-5" />
+                            <XIcon class="ml-2 h-5 w-5 text-destructive" />
                         {/if}
                         <p>{item.name}</p>
                     </li>

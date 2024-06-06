@@ -1,32 +1,45 @@
 import { error } from '@sveltejs/kit';
 import type { SvelteComponent } from 'svelte';
 
+import type { ComponentData } from '$docs/data/index.js';
+
 import type { PageLoad } from './$types.js';
 
 type DocFile = { default: SvelteComponent };
-type DocResolver = () => Promise<DocFile>;
+type DataFile = { data: ComponentData };
+type DocResolver<T extends DocFile | DataFile> = () => Promise<T>;
 
-const slugFromPath = (path: string) => path.replace('/src/content/', '').replace('.md', '');
+const slugFromModulePath = (path: string) => path.replace('/src/content/', '').replace('.md', '');
+const slugFromDataPath = (path: string) => path.replace('/src/docs/data/', '').replace('.ts', '');
 
 const getDoc = async (slug: string) => {
   const modules = import.meta.glob('/src/content/**/*.md');
+  const dataModules = import.meta.glob('/src/docs/data/**/*.ts');
 
-  let match: { path?: string; resolver?: DocResolver } = {};
+  let moduleMatch: { path?: string; resolver?: DocResolver<DocFile> } = {};
+  let dataMatch: { path?: string; resolver?: DocResolver<DataFile> } = {};
 
   for (const [path, resolver] of Object.entries(modules)) {
-    if (slugFromPath(path) === slug) {
-      match = { path, resolver: resolver as unknown as DocResolver };
+    if (slugFromModulePath(path) === slug) {
+      moduleMatch = { path, resolver: resolver as unknown as DocResolver<DocFile> };
       break;
     }
   }
 
-  const doc = await match?.resolver?.();
+  for (const [path, resolver] of Object.entries(dataModules)) {
+    if (slugFromDataPath(path) === slug) {
+      dataMatch = { path, resolver: resolver as unknown as DocResolver<DataFile> };
+      break;
+    }
+  }
 
-  if (!doc) {
+  const [doc, data] = await Promise.all([moduleMatch.resolver?.(), dataMatch.resolver?.()]);
+
+  if (!doc || !data) {
     error(404);
   }
 
-  return doc;
+  return { doc, properties: data.data };
 };
 
 export const load: PageLoad = async ({ params }) => ({

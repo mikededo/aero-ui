@@ -8,6 +8,19 @@ type NavigationGroup = {
 };
 export type Navigation = NavigationGroup[];
 
+const components = Object.keys(import.meta.glob('/src/lib/components/**/index.ts')).reduce<
+  NavigationItem[]
+>((acc, path) => {
+  let folder = path.replace('/src/lib/components/', '').replace('index.ts', '');
+  if (!folder) {
+    return acc;
+  }
+
+  folder = folder.slice(0, -1);
+  const title = `${folder.charAt(0).toUpperCase()}${folder.slice(1)}`;
+  return [...acc, { title, path: `/docs/components/${folder}` }];
+}, []);
+
 export const navigation: Navigation = [
   {
     title: 'Overview',
@@ -21,6 +34,7 @@ export const navigation: Navigation = [
   {
     title: 'Components',
     items: [
+      ...components,
       { title: 'Bottom sheet', path: '/docs/components/bottom-sheet' },
       { title: 'Button', path: '/docs/components/button' },
       { title: 'Dialog', path: '/docs/components/dialog' },

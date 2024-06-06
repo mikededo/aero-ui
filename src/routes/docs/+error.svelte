@@ -2,7 +2,7 @@
     import { RabbitIcon } from 'lucide-svelte';
 </script>
 
-<div class="h-full-topbar flex w-full flex-col items-center justify-center gap-6">
+<div class="flex h-full-topbar w-full flex-col items-center justify-center gap-6">
     <RabbitIcon size={256} strokeWidth={1.5} />
     <div class="text-center">
         <h1>404</h1>
