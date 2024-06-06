@@ -160,6 +160,7 @@ const config = {
     adapter: adapter(),
     alias: {
       $components: 'src/components',
+      $config: 'src/config',
       $docs: 'src/docs'
     }
   }

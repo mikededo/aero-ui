@@ -1,6 +1,8 @@
 <script lang="ts">
     import type { SvelteComponent } from 'svelte';
 
+    import { Routes } from '$config/index.js';
+
     import type { PageData } from './$types.js';
 
     type Props = { data: PageData };
@@ -16,7 +18,7 @@
 {#snippet item(component, next)}
     <div class="h-16 w-36" class:ml-auto={next} class:text-right={next}>
         <p class="text-sm text-secondary-500">{next ? 'Next' : 'Previous'}</p>
-        <a href="/docs/components/{component}" class="text-lg text-info">
+        <a href="${Routes.components}{component}" class="text-lg text-info">
             {componentName(component)}
         </a>
     </div>

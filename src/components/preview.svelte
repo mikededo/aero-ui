@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
 
-    import type { ComponentData } from '$docs/data/index.js';
+    import type { ComponentData } from '$docs/index.js';
 
     type Props = { children: Snippet; data: ComponentData };
     let { children, data }: Props = $props();

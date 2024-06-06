@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { SvelteComponent } from 'svelte';
 
+import { Paths } from '$config/index.js';
 import type { ComponentData } from '$docs/index.js';
 
 import type { PageLoad } from './$types.js';
@@ -9,11 +10,12 @@ type DocFile = { default: SvelteComponent };
 type DataFile = { data: ComponentData };
 type DocResolver<T extends DocFile | DataFile> = () => Promise<T>;
 
-const slugFromModulePath = (path: string) => path.replace('/src/content/', '').replace('.md', '');
-const slugFromDataPath = (path: string) => path.replace('/src/docs/data/', '').replace('.ts', '');
+const slugFromModulePath = (path: string) => path.replace(Paths.content, '').replace('.md', '');
+const slugFromDataPath = (path: string) => path.replace(Paths.data, '').replace('.ts', '');
 
 const getData = async (slug: string) => {
-  const modules = import.meta.glob('/src/content/**/*.md');
+  // Cannot replace with Paths as import.meta.glob cannot analyse variables
+  const modules = import.meta.glob('/src/docs/content/**/*.md');
   const dataModules = import.meta.glob('/src/docs/data/**/*.ts');
 
   let moduleMatch: { path?: string; resolver?: DocResolver<DocFile> } = {};

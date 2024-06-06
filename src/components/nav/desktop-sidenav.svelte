@@ -16,7 +16,7 @@
                     href={path}
                     class="w-full rounded-full p-2 px-4 transition-colors"
                     class:hover:bg-secondary-100={$page.url.pathname !== path}
-                    class:bg-primary-100={$page.url.pathname === path}
+                    class:bg-primary-50={$page.url.pathname === path}
                 >
                     {title}
                 </a>

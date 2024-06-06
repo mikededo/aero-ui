@@ -1,3 +1,5 @@
+import { Paths, Routes } from '$config/index.js';
+
 type NavigationItem = {
   title: string;
   path: string;
@@ -8,18 +10,18 @@ type NavigationGroup = {
 };
 export type Navigation = NavigationGroup[];
 
-const components = Object.keys(import.meta.glob('/src/content/**/*.md')).reduce<NavigationItem[]>(
-  (acc, path) => {
-    let folder = path.replace('/src/content/', '').replace('.md', '');
-    if (!folder) {
-      return acc;
-    }
+// Cannot replace with Paths.components as import.meta.glob cannot analyse variables
+const components = Object.keys(import.meta.glob('/src/docs/content/**/*.md')).reduce<
+  NavigationItem[]
+>((acc, path) => {
+  let folder = path.replace(Paths.content, '').replace('.md', '');
+  if (!folder) {
+    return acc;
+  }
 
-    const title = `${folder.charAt(0).toUpperCase()}${folder.slice(1)}`.replace(/-/g, ' ');
-    return [...acc, { title, path: `/docs/components/${folder}` }];
-  },
-  []
-);
+  const title = `${folder.charAt(0).toUpperCase()}${folder.slice(1)}`.replace(/-/g, ' ');
+  return [...acc, { title, path: `${Routes.components}${folder}` }];
+}, []);
 
 export const navigation: Navigation = [
   {
