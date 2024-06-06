@@ -2,6 +2,7 @@
 import type { Handle } from '@sveltejs/kit';
 
 const Redirects: Record<string, string> = {
+  '/': '/docs/introduction',
   '/docs': '/docs/introduction'
 };
 
