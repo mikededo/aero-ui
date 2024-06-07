@@ -24,7 +24,7 @@ Destructive
 </Button>
 </Preview>
 
-### Usage
+## Usage
 
 ### As a button
 

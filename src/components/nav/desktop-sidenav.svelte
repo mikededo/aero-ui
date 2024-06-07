@@ -5,7 +5,7 @@
 </script>
 
 <nav
-    class="z-10 hidden h-full-topbar max-w-xs flex-col gap-4 overflow-y-auto border-r px-2 py-4 text-sm md:px-4 lg:flex 2xl:w-[250px]"
+    class="z-10 hidden h-full-topbar max-w-xs shrink-0 flex-col gap-4 overflow-y-auto border-r px-2 py-4 text-sm md:px-4 lg:flex 2xl:w-[250px]"
 >
     <input class="w-full rounded-full bg-gray-100 px-4 py-2" placeholder="Search" />
     {#each navigation as { title, items }}

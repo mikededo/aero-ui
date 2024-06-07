@@ -18,7 +18,7 @@ This is the content of the banner
 </Banner>
 </Preview>
 
-### Usage
+## Usage
 
 Simply import the component and use it in your app.
 

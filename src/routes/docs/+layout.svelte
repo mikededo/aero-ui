@@ -4,7 +4,13 @@
 
     import { dev } from '$app/environment';
     import { page } from '$app/stores';
-    import { DesktopNav, JSIndicator, MobileNav, TailwindIndicator } from '$components/index.js';
+    import {
+        DesktopNav,
+        JSIndicator,
+        MobileNav,
+        TOC,
+        TailwindIndicator
+    } from '$components/index.js';
 
     type Props = { children: Snippet };
     let { children }: Props = $props();
@@ -21,12 +27,13 @@
         <MobileNav />
 
         <!-- Independent content  -->
-        <div class="content-wrapper h-full-topbar w-full overflow-y-auto">
+        <div class="content-wrapper h-full-topbar w-full overflow-y-auto" id="toc">
             <div
                 class="min-h-full-topbar mx-auto h-fit w-full max-w-[880px] px-8 py-6 md:px-10 lg:px-12 lg:py-12"
             >
                 {@render children()}
             </div>
+            <TOC />
         </div>
     {:else}
         {@render children()}
@@ -61,7 +68,7 @@
 
     @media (min-width: 1640px) {
         .content-wrapper {
-            margin-left: -250px;
+            margin-left: -200px;
         }
     }
 </style>

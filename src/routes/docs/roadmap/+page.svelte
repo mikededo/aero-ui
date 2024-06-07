@@ -69,7 +69,7 @@
 </script>
 
 <h1 class="mb-6 text-3xl font-bold">Roadmap</h1>
-<div class="min-h-full-topbar flex flex-col gap-4">
+<div class="flex min-h-full-topbar flex-col gap-4">
     {#each sections as section}
         <div class="flex flex-col">
             <p class="font-semibold">{section.title}</p>
