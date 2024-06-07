@@ -12,6 +12,10 @@ export default {
       height: {
         topbar: defaultTheme.spacing[12],
         'full-topbar': `calc(100vh - ${defaultTheme.spacing[12]})`
+      },
+      minHeight: {
+        topbar: defaultTheme.spacing[12],
+        'full-topbar': `calc(100vh - ${defaultTheme.spacing[12]})`
       }
     }
   },

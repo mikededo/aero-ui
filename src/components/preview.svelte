@@ -36,9 +36,15 @@
             >
                 <div class="flex flex-1 flex-col">
                     <span>{key}{value.required ? '*' : ''}</span>
-                    <span class="font-sans text-xs italic">{value.description}</span>
+                    <span class="max-w-[65%] font-sans text-xs italic">
+                        {#if value.descriptionAsHTML}
+                            <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+                            {@html value.description}
+                        {:else}
+                            {value.description}{/if}</span
+                    >
                 </div>
-                <div class="w-1/5 text-right">
+                <div class="text-right">
                     <span class="rounded-md bg-secondary-100 px-2 py-0.5">
                         {value.type}
                     </span>

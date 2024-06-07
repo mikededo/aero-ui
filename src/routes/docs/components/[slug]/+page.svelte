@@ -24,7 +24,7 @@
     </div>
 {/snippet}
 
-<div class="mt-auto flex w-full justify-between pt-8">
+<div class="mt-auto flex w-full justify-between pt-16">
     {#if navigation.prev}
         {@render item(navigation.prev, false)}
     {/if}

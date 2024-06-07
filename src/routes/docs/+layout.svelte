@@ -21,9 +21,9 @@
         <MobileNav />
 
         <!-- Independent content  -->
-        <div class="content-wrapper overflow-y-auto">
+        <div class="content-wrapper h-full-topbar w-full overflow-y-auto">
             <div
-                class="mx-auto h-full-topbar w-full max-w-[880px] px-8 py-6 md:px-10 lg:px-12 lg:py-12"
+                class="min-h-full-topbar mx-auto h-fit w-full max-w-[880px] px-8 py-6 md:px-10 lg:px-12 lg:py-12"
             >
                 {@render children()}
             </div>
