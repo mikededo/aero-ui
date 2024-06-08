@@ -31,7 +31,7 @@
         {/if}
         <div
             class="flex items-center gap-2 border-b border-primary-100 bg-primary-100/50 px-3 py-2 font-mono text-xs"
-            class:border-b={!!base}
+            class:border-t={!!base}
         >
             <span class="flex-1 font-sans">Name</span>
             <span class="w-1/5 text-right">Type</span>
