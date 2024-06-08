@@ -6,7 +6,7 @@
     let { ...props }: Props = $props();
 </script>
 
-<pre class={twMerge(props.class, 'code-pre overflow-hidden rounded-lg')} {...props}>
+<pre class={twMerge(props.class, 'my-8 overflow-hidden rounded-lg')} {...props}>
   {#if props.children}
         {@render props.children()}
     {/if}

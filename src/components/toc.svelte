@@ -28,7 +28,7 @@
 
 {#if $headingsTree?.length}
     <div
-        class="sticky left-0 top-0 hidden overflow-y-auto rounded-lg bg-white px-8 py-6 lg:py-12 2xl:flex 2xl:min-w-[250px] 2xl:flex-col"
+        class="fixed right-0 top-12 hidden overflow-y-auto rounded-lg px-8 py-6 lg:py-12 2xl:flex 2xl:min-w-[250px] 2xl:flex-col"
     >
         <p class="font-semibold">Table of contents</p>
         <nav>

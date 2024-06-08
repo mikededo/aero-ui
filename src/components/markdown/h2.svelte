@@ -6,7 +6,7 @@
     let { ...props }: Props = $props();
 </script>
 
-<h2 class={twMerge(props.class, 'mt-8')} {...props}>
+<h2 class={twMerge(props.class, 'mb-4 mt-8')} {...props}>
     {#if props.children}
         {@render props.children()}
     {/if}
