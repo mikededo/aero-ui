@@ -10,18 +10,20 @@ type NavigationGroup = {
 };
 export type Navigation = NavigationGroup[];
 
-// Cannot replace with Paths.components as import.meta.glob cannot analyse variables
-const components = Object.keys(import.meta.glob('/src/docs/content/components/*.md')).reduce<
-  NavigationItem[]
->((acc, path) => {
-  let folder = path.replace(Paths.components.content, '').replace('.md', '');
-  if (!folder) {
-    return acc;
-  }
+const items = (entries: ReturnType<ImportMeta['glob']>, route: keyof typeof Routes) =>
+  Object.keys(entries).reduce<NavigationItem[]>((acc, path) => {
+    let folder = path.replace(Paths[route].content, '').replace('.md', '');
+    if (!folder) {
+      return acc;
+    }
 
-  const title = `${folder.charAt(0).toUpperCase()}${folder.slice(1)}`.replace(/-/g, ' ');
-  return [...acc, { title, path: `${Routes.components}${folder}` }];
-}, []);
+    const title = `${folder.charAt(0).toUpperCase()}${folder.slice(1)}`.replace(/-/g, ' ');
+    return [...acc, { title, path: `${Routes[route]}${folder}` }];
+  }, []);
+
+// Cannot replace with Paths.components as import.meta.glob cannot analyse variables
+const components = items(import.meta.glob('/src/docs/content/components/*.md'), 'components');
+const utilities = items(import.meta.glob('/src/docs/content/utilities/*.md'), 'utilities');
 
 export const navigation: Navigation = [
   {
@@ -39,10 +41,7 @@ export const navigation: Navigation = [
   },
   {
     title: 'Utilities',
-    items: [
-      { title: 'JSIndicator', path: '/docs/utilities/js-indicator' },
-      { title: 'TailwindIndicator', path: '/docs/utilities/tailwind-indicator' }
-    ]
+    items: utilities
   },
   {
     title: 'Other',

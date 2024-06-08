@@ -1,6 +1,5 @@
 <script lang="ts">
     import { CheckIcon, XIcon } from 'lucide-svelte';
-
     let sections = [
         {
             title: 'Installation',
@@ -38,14 +37,17 @@
                 { name: 'Accordion', complete: false },
                 { name: 'Alert', complete: false },
                 { name: 'Badge', complete: false },
+                { name: 'Banner', complete: true },
                 { name: 'Breadcrumb', complete: false },
-                { name: 'Button', complete: false },
+                { name: 'Button', complete: true },
+                { name: 'BottomSheet', complete: false },
                 { name: 'Card', complete: false },
                 { name: 'Chip', complete: false },
                 { name: 'Carousel', complete: false },
                 { name: 'Checkbox', complete: false },
                 { name: 'Dropdown', complete: false },
-                { name: 'Input', complete: false },
+                { name: 'IconButton', complete: true },
+                { name: 'Input', complete: true },
                 { name: 'Modal', complete: false },
                 { name: 'Navbar', complete: false },
                 { name: 'Pagination', complete: false },
@@ -68,8 +70,8 @@
     ];
 </script>
 
-<h1 class="mb-6 text-3xl font-bold">Roadmap</h1>
-<div class="flex min-h-full-topbar flex-col gap-4">
+<h1>Roadmap</h1>
+<div class="mt-6 flex min-h-full-topbar flex-col gap-4">
     {#each sections as section}
         <div class="flex flex-col">
             <p class="font-semibold">{section.title}</p>

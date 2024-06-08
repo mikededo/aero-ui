@@ -1,4 +1,4 @@
-import type { ComponentData } from '$docs/data/components/index.js';
+import type { ComponentData } from '$docs/data/index.js';
 
 export const data: ComponentData = {
   base: 'HTMLInputAttributes',

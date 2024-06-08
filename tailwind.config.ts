@@ -4,7 +4,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import { aero, theme } from './src/lib/tailwind';
 
 export default {
-  content: ['./src/**/*.svelte', './src/**/*.ts', './src/**/*.html'],
+  content: ['./src/**/*.svelte', './src/**/*.ts', './src/**/*.html', './src/**/*.postcss'],
   theme: {
     ...theme,
     extend: {

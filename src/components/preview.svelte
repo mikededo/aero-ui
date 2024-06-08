@@ -1,22 +1,28 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
 
-    import type { ComponentData } from '$docs/index.js';
+    import type { ComponentData } from '$docs/data/index.js';
 
-    type Props = { children: Snippet; data: ComponentData; multiple?: boolean };
+    type Props = { children?: Snippet; data: ComponentData; multiple?: boolean };
     let { children, data, multiple = false }: Props = $props();
     let { base, properties, types } = data;
 
     let multipleClasses = $derived(multiple ? 'flex gap-4 flex-wrap' : '');
 </script>
 
-<div class="w-full rounded-lg border border-primary-100">
-    <div class="flex h-[200px] items-center justify-center p-6 {multipleClasses}">
-        {@render children()}
-    </div>
+<div class="w-full overflow-hidden rounded-lg border border-primary-100">
+    {#if children}
+        <div class="flex h-[200px] items-center justify-center p-6 {multipleClasses}">
+            {@render children()}
+        </div>
+    {/if}
+
     <div class="flex w-full flex-col">
         {#if base}
-            <div class="flex items-center gap-2 border-t border-primary-100 px-3 py-1.5 text-sm">
+            <div
+                class="flex items-center gap-2 border-primary-100 px-3 py-1.5 text-sm"
+                class:border-t={!!children}
+            >
                 <span class="flex-1">Extends base props from:</span>
                 <span class="rounded-md bg-secondary-100 px-2 py-0.5 font-mono">
                     {base}
@@ -24,7 +30,8 @@
             </div>
         {/if}
         <div
-            class="flex items-center gap-2 border-y border-primary-100 bg-primary-100/50 px-3 py-2 font-mono text-xs"
+            class="flex items-center gap-2 border-b border-primary-100 bg-primary-100/50 px-3 py-2 font-mono text-xs"
+            class:border-b={!!base}
         >
             <span class="flex-1 font-sans">Name</span>
             <span class="w-1/5 text-right">Type</span>
