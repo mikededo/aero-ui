@@ -9,6 +9,8 @@ The button component is used to trigger an action or event when clicked. It can 
   export let data;
 </script>
 
+## Preview
+
 <Preview {data} multiple>
 <Button>
 Submit

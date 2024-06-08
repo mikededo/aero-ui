@@ -1,6 +1,8 @@
 export const Paths = {
-  content: '/src/docs/content/',
-  data: '/src/docs/data/'
+  components: {
+    content: '/src/docs/content/components/',
+    data: '/src/docs/data/components/'
+  }
 };
 
 export const Routes = {

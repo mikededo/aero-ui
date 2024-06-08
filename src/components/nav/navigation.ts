@@ -11,10 +11,10 @@ type NavigationGroup = {
 export type Navigation = NavigationGroup[];
 
 // Cannot replace with Paths.components as import.meta.glob cannot analyse variables
-const components = Object.keys(import.meta.glob('/src/docs/content/**/*.md')).reduce<
+const components = Object.keys(import.meta.glob('/src/docs/content/components/*.md')).reduce<
   NavigationItem[]
 >((acc, path) => {
-  let folder = path.replace(Paths.content, '').replace('.md', '');
+  let folder = path.replace(Paths.components.content, '').replace('.md', '');
   if (!folder) {
     return acc;
   }

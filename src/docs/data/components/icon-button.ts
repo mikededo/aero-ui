@@ -1,4 +1,4 @@
-import type { ComponentData } from '../index.js';
+import type { ComponentData } from './index.js';
 
 export const data: ComponentData = {
   base: 'HTMLButtonAttributes | HTMLAnchorAttributes',
