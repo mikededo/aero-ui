@@ -2,19 +2,19 @@ p code {
   @apply rounded-sm bg-secondary-100 px-1 py-0.5 text-sm;
 }
 
-[data-rehype-pretty-code-figure]  {
+[data-rehype-pretty-code-figure] {
   @apply my-8;
 }
 
 [data-rehype-pretty-code-figure] figcaption {
-  @apply text-sm pl-4 py-1.5 rounded font-mono;
+  @apply rounded py-1.5 pl-4 font-mono text-sm;
   background-color: #363a4f;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   color: #cad3f5;
 }
 
-figure[data-rehype-pretty-code-figure]:has(>[data-rehype-pretty-code-title]) pre {
+figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title]) pre {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }

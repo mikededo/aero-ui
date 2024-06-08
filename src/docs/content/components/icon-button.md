@@ -12,7 +12,7 @@ The component also supports being a melt element, meaning that it can also be us
   export let data;
 </script>
 
-## Usage
+## Preview
 
 <Preview {data} multiple>
 
@@ -29,6 +29,8 @@ The component also supports being a melt element, meaning that it can also be us
 <IconButton Icon={SaveIcon} size="large" />
 </div>
 </Preview>
+
+## Usage
 
 ### As a button
 

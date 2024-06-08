@@ -40,11 +40,11 @@ If an input is not valid, `required` styles will be applied, even if the `invali
 
 <form onsubmit={...}>
   <Input
-      value={email}
-      label="Email"
-      placeholder="john.doe@email.com"
-      invalid={validEmail}
-      required
+    value={email}
+    label="Email"
+    placeholder="john.doe@email.com"
+    invalid={validEmail}
+    required
   />
 </form>
 ```

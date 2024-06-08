@@ -4,13 +4,8 @@
 
     import { dev } from '$app/environment';
     import { page } from '$app/stores';
-    import {
-        DesktopNav,
-        JSIndicator,
-        MobileNav,
-        TOC,
-        TailwindIndicator
-    } from '$components/index.js';
+    import { DesktopNav, MobileNav, TOC } from '$components/index.js';
+    import { JSIndicator, TailwindIndicator } from '$lib/index.js';
 
     type Props = { children: Snippet };
     let { children }: Props = $props();

@@ -5,6 +5,7 @@ export type Properties = {
   default?: string;
   description?: string;
   descriptionAsHTML?: boolean;
+  children?: Record<string, Exclude<Properties, 'children'>>;
 };
 export type SpecificTypes = Record<string, string>;
 export type ComponentData = {

@@ -98,9 +98,10 @@ const rehypeRenderCode = () => async (tree) => {
       }
 
       if (codeEl.type === 'element') {
-        const meltString = tabsToSpaces(
-          toHtml(codeEl, { allowDangerousCharacters: true, allowDangerousHtml: true })
-        );
+        const meltString = toHtml(codeEl, {
+          allowDangerousCharacters: true,
+          allowDangerousHtml: true
+        });
 
         //@ts-expect-error we're modifying the node type
         codeEl.type = 'raw';
@@ -126,8 +127,6 @@ const rehypePreToComponentPre = () => async (tree) => {
     }
   });
 };
-
-const tabsToSpaces = (code) => code.replaceAll('    ', '  ').replaceAll('\t', '  ');
 
 /** @type {Parameters<typeof mdsvex>[0]} */
 const mdsvexOptions = {
