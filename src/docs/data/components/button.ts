@@ -23,7 +23,7 @@ export const data: ComponentData = {
     }
   },
   types: {
-    ButtonVariant: "'condensed' | 'default'",
+    ButtonVariant: "'condensed' | 'default' | 'expanded'",
     ButtonColor: "'primary' | 'secondary' | 'muted' | 'destructive'"
   }
 };

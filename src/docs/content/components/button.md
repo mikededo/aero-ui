@@ -11,7 +11,10 @@ The button component is used to trigger an action or event when clicked. It can 
 
 ## Preview
 
-<Preview {data} multiple>
+<Preview {data}>
+
+<div class="flex flex-col gap-4 items-center">
+<div class="flex flex-row gap-2">
 <Button>
 Submit
 </Button>
@@ -24,6 +27,21 @@ Muted
 <Button color="destructive">
 Destructive
 </Button>
+</div>
+
+<div class="flex flex-row gap-2 items-center">
+<Button variant="condensed">
+Condensed
+</Button>
+<Button>
+Default
+</Button>
+<Button variant="expanded">
+Expanded
+</Button>
+</div>
+</div>
+
 </Preview>
 
 ## Usage

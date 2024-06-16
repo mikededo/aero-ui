@@ -1,12 +1,10 @@
 <script lang="ts">
     import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
-    import { type SharedButtonProps, sharedClasses } from './styles.js';
+    import { type BaseProps, sharedClasses } from './styles.js';
 
-    type BaseProps =
-        | (HTMLAnchorAttributes & { href: string })
-        | (HTMLButtonAttributes & { href?: never });
-    type Props = BaseProps & SharedButtonProps;
+    type Props = BaseProps &
+        ((HTMLAnchorAttributes & { href: string }) | (HTMLButtonAttributes & { href?: never }));
 
     let { variant = 'default', color = 'primary', children, ...restProps }: Props = $props();
 

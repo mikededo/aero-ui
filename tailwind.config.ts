@@ -5,6 +5,7 @@ import { aero, theme } from './src/lib/tailwind';
 
 export default {
   content: ['./src/**/*.svelte', './src/**/*.ts', './src/**/*.html', './src/**/*.postcss'],
+  darkMode: 'class',
   theme: {
     ...theme,
     extend: {
