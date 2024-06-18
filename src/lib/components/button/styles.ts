@@ -2,11 +2,11 @@ import { twMerge } from 'tailwind-merge';
 
 export type ButtonVariant = 'condensed' | 'default' | 'expanded';
 export type ButtonColor = 'primary' | 'secondary' | 'muted' | 'destructive';
-export type BaseProps = { variant?: ButtonVariant; color?: ButtonColor };
+export type BaseProps = { variant?: ButtonVariant; color?: ButtonColor; disabled?: boolean };
 
 const VARIANTS: Record<ButtonVariant, string> = {
   condensed: 'py-1 px-2.5 h-unset text-xs font-normal',
-  default: 'px-4 py-2',
+  default: 'px-4 py-2 text-sm',
   expanded: 'px-6 py-3 text-md'
 };
 const COLORS: Record<ButtonColor, string> = {
@@ -26,7 +26,7 @@ export const sharedClasses = ({
   className
 }: Required<Pick<BaseProps, 'variant' | 'color'>> & { className?: string | null }) =>
   twMerge(
-    'whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:active:scale-100',
+    'whitespace-nowrap rounded-full font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:active:scale-100',
     VARIANTS[variant],
     COLORS[color],
     className
