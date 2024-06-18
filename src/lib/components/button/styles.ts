@@ -11,7 +11,7 @@ const VARIANTS: Record<ButtonVariant, string> = {
 };
 const COLORS: Record<ButtonColor, string> = {
   primary:
-    'bg-primary dark:bg-primary-800 text-white hover:bg-primary/90 hover:dark:bg-primary-800/90 stroke-white',
+    'bg-primary dark:bg-primary-800 text-white hover:bg-primary/90 hover:dark:bg-primary-800/90 stroke-white disabled:bg-primary/75 dark:disabled:bg-primary-800/75',
   secondary:
     'bg-secondary dark:bg-secondary-900 text-secondary-foreground dark:text-white dark:stroke-white hover:bg-secondary/80 dark:hover:bg-secondary-900/90 border border-transparent hover:border-secondary-300 dark:hover:border-secondary-700 focus-visible:ring-secondary-300 dark:focus-visible:ring-secondary-700',
   muted:
@@ -26,7 +26,7 @@ export const sharedClasses = ({
   className
 }: Required<Pick<BaseProps, 'variant' | 'color'>> & { className?: string | null }) =>
   twMerge(
-    'whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+    'whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:active:scale-100',
     VARIANTS[variant],
     COLORS[color],
     className
