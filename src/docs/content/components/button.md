@@ -3,7 +3,7 @@
 The button component is used to trigger an action or event when clicked. It can be used to submit a form, navigate to a different page, or to trigger a function. In order to differentiate between an `anchor` element or a `button` element, the `href` is used.
 
 <script>
-  import { Preview } from '$components';
+  import { ComponentPreview } from '$components';
   import { Button } from '$lib/components/button';
 
   export let data;
@@ -11,7 +11,7 @@ The button component is used to trigger an action or event when clicked. It can 
 
 ## Preview
 
-<Preview {data}>
+<ComponentPreview {data}>
 
 <div class="flex flex-col gap-4 items-center">
 <div class="flex flex-row gap-2">
@@ -42,7 +42,7 @@ Expanded
 </div>
 </div>
 
-</Preview>
+</ComponentPreview>
 
 ## Usage
 

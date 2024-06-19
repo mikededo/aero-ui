@@ -13,3 +13,8 @@ export type ComponentData = {
   properties: Record<string, Properties>;
   types?: Record<string, string>;
 };
+export type ActionData = {
+  properties?: Record<string, Properties>;
+  returns?: Record<string, Properties>;
+  types?: Record<string, string>;
+};

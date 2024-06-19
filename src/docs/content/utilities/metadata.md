@@ -3,14 +3,14 @@
 The metadata utility is a simple utility that allows you to add metadata to the pages. It simplifies the process of adding metadata to Svelte Kit pages.
 
 <script>
-  import { Preview } from '$components';
+  import { ComponentPreview } from '$components';
 
   export let data;
 </script>
 
 ## API
 
-<Preview {data} />
+<ComponentPreview {data} />
 
 ## Usage
 

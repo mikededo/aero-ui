@@ -3,7 +3,7 @@
 Text input fields allow users to input text into a field. This is useful for forms, search bars, and other fields where users need to input text.
 
 <script lang="ts">
-  import { Preview } from '$components'
+  import { ComponentPreview } from '$components'
   import { Input } from '$lib/components/input';
 
   export let data;
@@ -11,9 +11,9 @@ Text input fields allow users to input text into a field. This is useful for for
 
 ## Preview
 
-<Preview {data}>
+<ComponentPreview {data}>
 <Input label="Name" placeholder="John doe" />
-</Preview>
+</ComponentPreview>
 
 ## Usage
 

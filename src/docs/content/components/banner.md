@@ -1,7 +1,7 @@
 # Banner
 
 <script>
-  import { Preview } from '$components';
+  import { ComponentPreview } from '$components';
   import { Banner } from '$lib/components/banner';
 
   export let data;
@@ -12,11 +12,11 @@ important information or to show a message to the user.
 
 ## Preview
 
-<Preview {data}>
+<ComponentPreview {data}>
 <Banner>
 This is the content of the banner
 </Banner>
-</Preview>
+</ComponentPreview>
 
 ## Usage
 

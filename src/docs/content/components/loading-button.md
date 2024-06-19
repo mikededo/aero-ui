@@ -5,7 +5,7 @@ The loading button is a button that displays a loading spinner when the `loading
 When the `loading` prop is set to `true`, the button will have a `disabled` state and will not respond to clicks. The loading spinner will be displayed instead.
 
 <script>
-  import { Preview } from '$components';
+  import { ComponentPreview } from '$components';
   import { LoadingButton } from '$lib/components/loading-button';
 
   export let data;
@@ -13,7 +13,7 @@ When the `loading` prop is set to `true`, the button will have a `disabled` stat
 
 ## Preview
 
-<Preview {data} multiple>
+<ComponentPreview {data} multiple>
 
 <LoadingButton loadingSize="small" variant="condensed" loading>
 Condensed
@@ -25,7 +25,7 @@ Default
 Expanded
 </LoadingButton>
 
-</Preview>
+</ComponentPreview>
 
 ## Usage
 

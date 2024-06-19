@@ -6,7 +6,7 @@ The component also supports being a melt element, meaning that it can also be us
 
 <script>
   import { SaveIcon } from 'lucide-svelte';
-  import { Preview } from '$components';
+  import { ComponentPreview } from '$components';
   import { IconButton } from '$lib/components/icon-button';
 
   export let data;
@@ -14,7 +14,7 @@ The component also supports being a melt element, meaning that it can also be us
 
 ## Preview
 
-<Preview {data} multiple>
+<ComponentPreview {data} multiple>
 
 <div class="flex gap-2 w-full justify-center">
 <IconButton Icon={SaveIcon} />
@@ -28,7 +28,7 @@ The component also supports being a melt element, meaning that it can also be us
 <IconButton Icon={SaveIcon}  />
 <IconButton Icon={SaveIcon} size="large" />
 </div>
-</Preview>
+</ComponentPreview>
 
 ## Usage
 
