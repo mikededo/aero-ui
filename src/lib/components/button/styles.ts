@@ -15,7 +15,7 @@ const COLORS: Record<ButtonColor, string> = {
   secondary:
     'bg-secondary dark:bg-secondary-900 text-secondary-foreground dark:text-white dark:stroke-white hover:bg-secondary/80 dark:hover:bg-secondary-900/90 border border-transparent hover:border-secondary-300 dark:hover:border-secondary-700 focus-visible:ring-secondary-300 dark:focus-visible:ring-secondary-700',
   muted:
-    'bg-transparent text-foreground hover:bg-secondary stroke-foreground focus-visible:ring-secondary-300 dark:text-white dark:stroke-white hover:bg-secondary-900',
+    'bg-transparent text-foreground hover:bg-secondary stroke-foreground focus-visible:ring-secondary-300 dark:text-white dark:stroke-white dark:hover:bg-secondary-900',
   destructive:
     'bg-destructive text-destructive-foreground hover:bg-destructive/90 stroke-destructive focus-visible:ring-destructive'
 };
