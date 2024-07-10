@@ -3,6 +3,7 @@
 
     import type { ComponentData } from '$docs/data/index.js';
 
+    import Chip from './chip.svelte';
     import Properties from './properties.svelte';
     import Types from './types.svelte';
 
@@ -13,7 +14,7 @@
     let multipleClasses = $derived(multiple ? 'flex gap-4 flex-wrap' : '');
 </script>
 
-<div class="w-full overflow-hidden rounded-lg border border-primary-100">
+<div class="w-full overflow-hidden rounded-lg border border-primary-100 dark:border-secondary-800">
     {#if children}
         <div class="flex h-[200px] items-center justify-center p-6 {multipleClasses}">
             {@render children()}
@@ -23,16 +24,16 @@
     <div class="flex w-full flex-col">
         {#if base}
             <div
-                class="flex items-center gap-2 border-primary-100 px-3 py-1.5 text-sm"
+                class="flex items-center gap-2 border-primary-100 px-3 py-1.5 text-sm dark:border-secondary-800"
                 class:border-t={!!children}
             >
                 <span class="flex-1">Extends base props from:</span>
-                <span class="rounded-md bg-secondary-100 px-2 py-0.5 font-mono">
+                <Chip>
                     {base}
-                </span>
+                </Chip>
             </div>
         {/if}
-        <Properties hasBase={!!base} {properties} />
+        <Properties hasBase={!base} {properties} />
         {#if types}
             <Types {types} />
         {/if}

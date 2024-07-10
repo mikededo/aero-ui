@@ -13,7 +13,7 @@
     let multipleClasses = $derived(multiple ? 'flex gap-4 flex-wrap' : '');
 </script>
 
-<div class="w-full overflow-hidden rounded-lg border border-primary-100">
+<div class="w-full overflow-hidden rounded-lg border border-primary-100 dark:border-secondary-800">
     {#if children}
         <div class="flex h-[200px] items-center justify-center p-6 {multipleClasses}">
             {@render children()}
@@ -22,10 +22,10 @@
 
     <div class="flex w-full flex-col">
         {#if properties}
-            <Properties {properties} />
+            <Properties hasBase={true} {properties} />
         {/if}
         {#if returns}
-            <Properties hasBase={!properties} properties={returns} />
+            <Properties hasBase={!!properties} properties={returns} />
         {/if}
         {#if types}
             <Types {types} />

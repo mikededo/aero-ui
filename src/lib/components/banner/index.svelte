@@ -14,7 +14,7 @@
 
     let classes = $derived(
         twMerge(
-            'w-full rounded-lg bg-secondary p-2 text-center text-sm',
+            'w-full rounded-lg bg-secondary p-2 text-center text-sm dark:bg-secondary-900',
             destructive && 'bg-destructive/10 text-destructive dark:bg-destructive/75',
             restProps.class
         )

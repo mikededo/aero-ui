@@ -31,18 +31,14 @@ const COLORS: Record<IconButtonColor, string> = {
     'bg-primary dark:bg-primary-800 hover:bg-primary/90 hover:dark:bg-primary-800/90 stroke-white',
   secondary:
     'bg-secondary dark:bg-secondary-900 stroke-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary-900/90 border border-transparent hover:border-secondary-300 dark:hover:border-secondary-700',
-  muted: 'bg-transparent hover:bg-secondary stroke-secondary-foreground',
+  muted:
+    'bg-transparent hover:bg-secondary stroke-secondary-foreground dark:hover:bg-secondary-900',
   destructive:
     'bg-destructive text-destructive-foreground hover:bg-destructive/90 stroke-destructive stroke-white'
 };
 
 export const getWrapperClasses = ({ size, color }: Required<Pick<BaseProps, 'size' | 'color'>>) =>
-  twMerge(
-    ICON_WRAPPER_CLASSES,
-    ICON_WRAPPER_SIZES[size],
-    COLORS[color ?? 'primary'],
-    ICON_SIZES[size]
-  );
+  twMerge(ICON_WRAPPER_CLASSES, ICON_WRAPPER_SIZES[size], COLORS[color ?? 'primary']);
 
 export const getIconClasses = ({ size }: Required<Pick<BaseProps, 'size'>>) =>
   twMerge(ICON_SIZES[size], 'stroke-inherit');

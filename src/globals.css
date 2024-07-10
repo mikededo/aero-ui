@@ -6,11 +6,14 @@
   :root {
     --font-sans: Geist;
     --font-mono: 'Geist Mono';
+    --background: #ffffff;
     --foreground: #333333;
+  }
 
-    .dark {
-      /* DEFINE DARK MODE VARIABLES */
-    }
+  .dark {
+    /* DEFINE DARK MODE VARIABLES */
+    --background: #000000;
+    --foreground: #ffffff;
   }
 }
 

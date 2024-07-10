@@ -4,13 +4,13 @@ type ClassProps = { invalid?: boolean; classes?: string | null; focusWithin?: bo
 
 export const getInputClasses = ({ invalid, classes, focusWithin }: ClassProps = {}) =>
   twMerge(
-    'border-input h-10 rounded border px-3 py-1 outline-none ring ring-transparent transition-all disabled:cursor-not-allowed disabled:bg-muted',
+    'border-input h-10 rounded border bg-background px-3 py-1 outline-none ring ring-transparent transition-all disabled:cursor-not-allowed disabled:bg-muted',
     focusWithin
-      ? 'focus-within:ring-primary focus-within:ring-offset-2 focus-within:ring-offset-white'
-      : 'focus:ring-primary focus:ring-offset-2 focus:ring-offset-white',
+      ? 'focus-within:ring-primary focus-within:ring-offset-2 focus-within:ring-offset-background'
+      : 'focus:ring-primary focus:ring-offset-2 focus:ring-offset-background',
     invalid
-      ? 'border-destructive ring-destructive ring-offset-2 ring-offset-white'
-      : 'required:border-destructive required:ring-destructive required:ring-offset-2 required:ring-offset-white',
+      ? 'border-destructive ring-destructive ring-offset-2 ring-offset-background'
+      : 'required:border-destructive required:ring-destructive required:ring-offset-2 required:ring-offset-background',
     classes
   );
 

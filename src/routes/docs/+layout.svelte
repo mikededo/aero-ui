@@ -11,7 +11,9 @@
     let { children }: Props = $props();
 </script>
 
-<header class="flex h-topbar w-full items-center gap-2 border-b px-4 md:px-6">
+<header
+    class="flex h-topbar w-full items-center gap-2 border-b px-4 dark:border-b-secondary-800 md:px-6"
+>
     <RabbitIcon />
     <p class="text-xl font-semibold">Aero UI</p>
 </header>
